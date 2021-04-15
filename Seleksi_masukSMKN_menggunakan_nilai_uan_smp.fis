@@ -1,0 +1,73 @@
+[System]
+Name='Seleksi_masukSMKN_menggunakan_nilai_uan_smp'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=11
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='IPA'
+Range=[0 10]
+NumMFs=3
+MF1='cukup':'trimf',[0 2.5 5]
+MF2='bagus':'trimf',[5.1 6.25 7.5]
+MF3='sangat_bagus':'trimf',[7.6 8.5 10]
+
+[Input2]
+Name='MATEMATIKA'
+Range=[0 10]
+NumMFs=3
+MF1='cukup':'trimf',[0 2.5 5]
+MF2='bagus':'trimf',[5.1 6.25 7.5]
+MF3='sangat_bagus':'trimf',[7.6 8.5 10]
+
+[Input3]
+Name='NEM'
+Range=[0 40]
+NumMFs=3
+MF1='CUKUP':'trimf',[0 20 25]
+MF2='BAGUS':'trimf',[25.1 30 33.9]
+MF3='SANGAT_BAGUS':'trimf',[34 37 40]
+
+[Output1]
+Name='FARMASI'
+Range=[0 30]
+NumMFs=3
+MF1='Farmasi_3':'trimf',[0 5 10]
+MF2='Farmasi_2':'trimf',[10 15 20]
+MF3='Farmasi_1':'trimf',[20 25 30]
+
+[Output2]
+Name='KIMIA_ANALIS'
+Range=[0 30]
+NumMFs=3
+MF1='KIMIA_ANALIS_3':'trimf',[0 5 10]
+MF2='KIMIA_ANALIS_2':'trimf',[10 15 20]
+MF3='KIMIA_ANALIS_1':'trimf',[20 25 30]
+
+[Output3]
+Name='ELEKTRO'
+Range=[0 30]
+NumMFs=3
+MF1='ELEKTRO_3':'trimf',[0 5 10]
+MF2='ELEKTRO_2':'trimf',[10 15 20]
+MF3='ELEKTRO_1':'trimf',[20 25 30]
+
+[Rules]
+3 3 3, 3 3 3 (1) : 1
+3 3 2, 2 3 3 (1) : 1
+2 3 2, 1 2 3 (1) : 1
+1 3 3, -1 1 2 (1) : 1
+1 3 2, -1 -1 2 (1) : 1
+1 1 1, -1 -1 -2 (1) : 1
+1 3 1, -1 -1 1 (1) : 1
+1 2 3, -1 1 2 (1) : 1
+1 3 3, -1 2 3 (1) : 1
+2 3 2, -1 2 3 (1) : 1
+2 3 3, -1 3 3 (1) : 1
